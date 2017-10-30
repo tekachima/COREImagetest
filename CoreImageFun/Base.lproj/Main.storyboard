@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreImageFun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hGP-dQ-FdJ">
+                                <rect key="frame" x="0.0" y="269" width="375" height="234.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hGP-dQ-FdJ" secondAttribute="height" multiplier="8:5" id="NTV-JU-TtP"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hSD-yM-aa1">
+                                <rect key="frame" x="115" y="523" width="145" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="yMq-30-Bzh"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="amountSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="XJf-9I-QQe"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zov-fV-4Nh">
+                                <rect key="frame" x="251" y="605" width="95" height="30"/>
+                                <state key="normal" title="Photo Album"/>
+                                <connections>
+                                    <action selector="loadPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKt-tQ-Fh5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4t-cY-kBV">
+                                <rect key="frame" x="47" y="605" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save to Album"/>
+                                <connections>
+                                    <action selector="savePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NM9-nd-j42"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hGP-dQ-FdJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="7am-My-3wB"/>
+                            <constraint firstItem="hSD-yM-aa1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DIM-3A-xdz"/>
+                            <constraint firstItem="hSD-yM-aa1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="Hom-1f-KiY"/>
+                            <constraint firstItem="zov-fV-4Nh" firstAttribute="top" secondItem="hSD-yM-aa1" secondAttribute="bottom" constant="53" id="RXq-Ol-9cP"/>
+                            <constraint firstItem="hSD-yM-aa1" firstAttribute="centerX" secondItem="hGP-dQ-FdJ" secondAttribute="centerX" id="SCa-JA-B4e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zov-fV-4Nh" secondAttribute="bottom" constant="32" id="ZXm-qa-qrE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hSD-yM-aa1" secondAttribute="bottom" constant="113" id="ZeQ-Br-5lS"/>
+                            <constraint firstItem="hGP-dQ-FdJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aY1-EW-sL5"/>
+                            <constraint firstItem="zov-fV-4Nh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="251" id="mcq-fe-qr4"/>
+                            <constraint firstItem="hGP-dQ-FdJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="249" id="qkZ-wK-4JN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zov-fV-4Nh" secondAttribute="trailing" constant="29" id="r1S-1B-eUc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ImageView" destination="hGP-dQ-FdJ" id="Boy-eK-rvf"/>
+                        <outlet property="amountSlider" destination="hSD-yM-aa1" id="jQm-oY-Bay"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+</document>
